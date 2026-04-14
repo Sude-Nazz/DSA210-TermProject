@@ -27,5 +27,5 @@ My initial exploratory analysis is focused on the relationship between **Academi
 - **p-Value:** 0.2663
 - **Interpretation:** The current results do not show a statistically significant difference in listening duration based on my stress level. 
 
-**Why?** (for Milestone 1)
+**Why?**
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I am going to integrate **Spotify Audio Features (Energy, Valence)** to see if the *type* of music changes, even if the *duration* remains the same.
