@@ -22,7 +22,7 @@ I am investigating how my music consumption (via Spotify history) correlates wit
 - "my_featurized_data.csv": The integrated dataset with all features
 - "stress_listening_eda.png": Visualization showing my stress level vs. my listening trend
 
-### Initial Findings (Milestone 1)
+### Initial Findings (Milestone 1):
 My initial exploratory analysis is focused on the relationship between **Academic Stress Levels** and **Average Track Duration**. 
 - **p-Value:** 0.2663
 - **Interpretation:** The current results do not show a statistically significant difference in listening duration based on my stress level. 
