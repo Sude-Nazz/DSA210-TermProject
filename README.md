@@ -13,14 +13,14 @@ I am investigating how my music consumption (via Spotify history) correlates wit
 - **Statistics:** I have performed a T-Test to see if my stress level significantly changes my listening behavior.
 
 ## How to Run:
-1. Install dependencies: `pip install -r requirements.txt`
-2. Ensure all data files (`Streaming_History_Audio_*.json`, `academic_stress.csv`, `menstrual_data.csv`, `crying_logs.csv`) are in the root folder.
-3. Run the script: `python main.py`
+1. Install dependencies: "pip install -r requirements.txt"
+2. Ensure all data files ("Streaming_History_Audio_*.json", "academic_stress.csv", "menstrual_data.csv", "crying_logs.csv") are in the root folder.
+3. Run the script: "python main.py"
 
 ## Deliverables:
-- `main.py`: The core analysis script
-- `my_featurized_data.csv`: The integrated dataset with all features
-- `stress_listening_eda.png`: Visualization showing my stress level vs. my listening trend
+- "main.py": The core analysis script
+- "my_featurized_data.csv": The integrated dataset with all features
+- "stress_listening_eda.png": Visualization showing my stress level vs. my listening trend
 
 ### Initial Findings (Milestone 1)
 My initial exploratory analysis is focused on the relationship between **Academic Stress Levels** and **Average Track Duration**. 
