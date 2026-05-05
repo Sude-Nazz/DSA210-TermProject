@@ -1,4 +1,4 @@
-# DSA210-TermProject
+<img width="846" height="547" alt="image" src="https://github.com/user-attachments/assets/c0d6462d-8ab5-4250-b805-12d1d1d273f6" /># DSA210-TermProject
 
 # A Multivariate Analysis of My Music Consumption Patterns Based on My Menstrual Cycle, Academic Stress, and Emotional State
 
@@ -25,7 +25,9 @@ I am investigating how my music consumption (via Spotify history) correlates wit
 ### Initial Findings (Milestone 1):
 My initial exploratory analysis is focused on the relationship between **Academic Stress Levels** and **Average Track Duration**. 
 - **p-Value:** 0.2663
-- **Interpretation:** The current results do not show a statistically significant difference in listening duration based on my stress level. 
+- **Interpretation:** The current results do not show a statistically significant difference in listening duration based on my stress level.
+
+![my stress level vs. my listening trend](stress_listening_eda.png)
 
 **Why?**
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I am going to integrate **Spotify Audio Features (Energy, Valence)** to see if the *type* of music changes, even if the *duration* remains the same.
