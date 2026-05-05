@@ -143,3 +143,74 @@ if p_val < 0.05:
     print("Conclusion: The correlation is statistically significant.")
 else:
     print("Conclusion: No significant correlation is found.")
+
+
+# -----------------------------------------
+
+import numpy as np
+
+
+# 1. I am uploading the data..
+df = pd.read_csv('real_spotify_data.csv')
+
+# 2. Valence Dictionary According to Song Type
+
+# Spotify Valence Scale: 0.0 (Low Energy) - 1.0 (Energetic)
+genre_valence_map = {
+    'Arabesk': 0.15,
+    'Slow Pop': 0.30,
+    'Classical': 0.25,
+    'Alternative Rock': 0.45,
+    'Pop': 0.65,
+    'Indie': 0.40,
+    'Rock': 0.55,
+    'Electronic/Dance': 0.80,
+    'R&B': 0.50
+}
+
+# Scores According to My Main Singer Names
+
+def assign_genre_valence(track_name):
+    track_name = str(track_name).lower()
+   
+    if any(word in track_name for word in ['müslüm', 'ebru', 'yıldız']): return 0.15 # Arabesk
+    if any(word in track_name for word in ['sezen', 'sıla']): return 0.35 # Slow Pop
+    if any(word in track_name for word in ['duman', 'manga', 'mor ve ötesi', 'şebnem', 'özlem']): return 0.70 # Rock
+    if any(word in track_name for word in ['mustafa', 'tarkan', 'kenan', 'hepsi', 'vega']): return 1.00 # Energetic/Dance
+   
+    return 0.45 # Default/Neutral
+
+# I am getting Proxy Valence Scores..
+df['valence'] = df['master_metadata_track_name'].apply(assign_genre_valence)
+# I am adding small randomizationto be more realistic. (+/- 0.05) 
+df['valence'] = df['valence'] + np.random.uniform(-0.05, 0.05, len(df))
+
+# 3. MY INTEGRATED MOOD (According to all Crying + Menstrual Period + Academic Stress)
+def get_mood(row):
+    if row['crying_incident'] == 1: return 'Crying'
+    if row['is_period'] == 1 and row['stress_level'] >= 4: return 'Period + High Stress'
+    if row['stress_level'] >= 4: return 'High Stress Only'
+    if row['is_period'] == 1: return 'Period Only'
+    return 'Stable'
+
+df['mood_state'] = df.apply(get_mood, axis=1)
+
+# --- EDA 3: Valence vs. Integrated Mood ---
+plt.figure(figsize=(12,6))
+sns.boxplot(data=df, x='mood_state', y='valence', palette='Spectral')
+plt.title('Analysis of Music Valence (Proxy Data) Across Integrated Mood States')
+plt.ylabel('Estimated Valence Score (0-1)')
+plt.savefig('proxy_valence_eda.png')
+plt.show()
+
+# --- HYPOTHESIS TEST 3: ANOVA ---
+groups = [df[df['mood_state'] == m]['valence'] for m in df['mood_state'].unique()]
+f_stat, p_val = stats.f_oneway(*groups)
+
+print(f"--- Proxy Data Hypothesis Test (ANOVA) ---")
+print(f"P-Value: {p_val:.4f}")
+
+if p_val < 0.05:
+    print("Conclusion: My mood significantly affects the valence score of the songs I am listening.")
+else: 
+    print("No significant relationship between the integrated moods and the valence scores!")
