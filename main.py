@@ -118,3 +118,28 @@ else:
 final_cols = ['ts', 'master_metadata_track_name', 'ms_played', 'stress_level', 'crying_incident', 'is_period']
 df[final_cols].to_csv('my_featurized_data.csv', index=False)
 print("Files saved successfully!")
+
+
+
+
+# ----------------------------------------
+df = pd.read_csv('my_featurized_data.csv')
+
+# 1- EXTRA EDA: My Total Number of Songs According to My Stress Level
+plt.figure(figsize=(10,6))
+track_counts = df.groupby('stress_level').size()
+sns.barplot(x=track_counts.index, y=track_counts.values, palette='viridis')
+plt.title('Total Number of My Tracks vs My Stress Level')
+plt.xlabel('My Stress Level')
+plt.ylabel('Number of My Tracks')
+plt.savefig('stress_track_count_eda.png')
+plt.show()
+
+# 2- EXTRA HYPOTHESIS TEST: Pearson Correlation ("Is there a correlation between my stress level and my track number?")
+
+correlation, p_value_corr = stats.pearsonr(df['stress_level'], df['ms_played'])
+print(f"Pearson Correlation: {correlation:.4f}, P-value: {p_value_corr:.4f}")
+if p_val < 0.05:
+    print("Conclusion: The difference is statistically significant.")
+else:
+    print("Conclusion: No significant difference is found.")
