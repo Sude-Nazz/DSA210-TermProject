@@ -33,7 +33,7 @@ My initial exploratory analysis is focused on the relationship between **Academi
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I am going to integrate **Spotify Audio Features (Energy, Valence)** to see if the *type* of music changes, even if the *duration* remains the same.
 
 
-## MILESTONE 2:
+## 2ND EDA & HYPOTHESIS TEST
 I have applied second EDA and hypothesis test to figure out the relationship between my stress level and the number of tracks, by utilizing Pearson correlation.
 Therefore, we hav had a visualization showing my stress level vs. my number of tracks.
 We have obtained the **p-Value** as **0.1208** (>0.05). So, the correlation between my stress level and the number of tracks is not significant.
@@ -47,7 +47,7 @@ Hence, I will try to investigate that kind of relation.
 
 ## 3RD EDA & HYPOTHESIS TEST
 This time, I have assigned valence scores to the songs I have listened, by utilizing the singers/genres. In addition, in order to be more realistic, I have added small randomizations to those scores (By the way, my initial target was to set up API connection on Colab and obtain valence scores from Spotify, but unfotunately Spoity did not allow me to do that since I don't have a Premium account.). Furthermore, I have deployed my integrated mood (by considering all aspects-academic stress, menstrual period, and crying) this time. I have defined **5 moods**: **Stable**, **Period Only**, **High Stress Only**, **Period + High Stress**, and **Crying**. Then, I have applied my 3rd EDA and hypothesis test to figure out the relationship between my integrated mood and the valence scores of the songs. Since I have more than two mood categories, ANOVA is the most robust method to compare all groups simultaneously without increasing the risk of statistical error; so, I have used ANOVA for my hypothesis test stage.
-And, as it can be seen in the example result below, **p-Value** for this hypothesis test has been **0.0312**! Therefore, for this test, I have concluded that "My integrated mood significantly affects the valence score of the songs that I am listening to."
+And, as it can be seen in the example result below, **p-Value** for this hypothesis test has been **0.0312**! Therefore, for this test, I have concluded that **"My integrated mood significantly affects the valence score of the songs that I am listening to."**
 
 <img width="1001" height="547" alt="3rd_visualization" src="https://github.com/user-attachments/assets/c54b7e99-48a3-4f45-b5b5-850af430ccda" />
 
