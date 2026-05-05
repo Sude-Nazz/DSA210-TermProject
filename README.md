@@ -55,6 +55,7 @@ And, as it can be seen in the example result below, **p-Value** for this hypothe
 ## MACHINE LEARNING: PREDICTIVE MODELING OF  INTEGRATED MOOD STATES
 In the final phase of my project, I developed a Supervised Machine Learning model to determine if my emotional and physiological states can be predicted by combining behavioral music data with environmental and academic context.
 
+
 **A. Methodology & Algorithm Selection**
 
 I implemented a *Decision Tree Classifier* for this analysis.
@@ -62,6 +63,7 @@ I implemented a *Decision Tree Classifier* for this analysis.
 *Why have I used Decision Tree?* The Decision Tree allows me to visualize the specific logical paths (e.g., if stress is high AND music valence is low, THEN predict 'Crying') that lead to an emotional state, providing a "map" of my mood triggers.
 
 *Hyperparameter Tuning:* I restricted the model to a max_depth=3. This deliberate constraint prevents overfitting, ensuring the model captures general behavioral patterns rather than memorizing noise in the dataset.
+
 
 **B. Feature Engineering & Justification**
 
@@ -73,11 +75,13 @@ To build a robust model, I selected three specific features as inputs:
 
 *3. Hour of Day:* Captures my circadian rhythm and temporal habits.
 
+
 **C. Model Validation: 10-Fold Cross-Validation**
 
 To ensure the results were not due to a lucky random split of data, I utilized 10-Fold Cross-Validation.
 
 *-Process:* The dataset was partitioned into 10 subsets. The model was trained 10 times, each time using a different subset as the test set and the remaining 9 as the training set. (This method is the industry standard for ensuring that the model generalizes well to new, unseen data.)
+
 
 **D. Performance Results & Discussion**
 
