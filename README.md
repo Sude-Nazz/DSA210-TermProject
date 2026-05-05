@@ -40,3 +40,6 @@ We have obtained the **p-Value** as **0.1208** (>0.05). So, the correlation betw
 **Why?**
 This is likely because there might be a relationship between my mood and the qualitative features of the songs (like Energy and Valence) but not the quantitative ones.
 Hence, I will try to investigate that kind of relation.
+
+
+![my stress level vs. my number of tracks](2nd Visualization.png)
