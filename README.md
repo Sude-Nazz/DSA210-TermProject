@@ -57,7 +57,9 @@ In the final phase of my project, I developed a Supervised Machine Learning mode
 
 **A. Methodology & Algorithm Selection**
 I implemented a *Decision Tree Classifier* for this analysis.
+
 *Why have I used Decision Tree?* The Decision Tree allows me to visualize the specific logical paths (e.g., if stress is high AND music valence is low, THEN predict 'Crying') that lead to an emotional state, providing a "map" of my mood triggers.
+
 *Hyperparameter Tuning:* I restricted the model to a max_depth=3. This deliberate constraint prevents overfitting, ensuring the model captures general behavioral patterns rather than memorizing noise in the dataset.
 
 **B. Feature Engineering & Justification**
