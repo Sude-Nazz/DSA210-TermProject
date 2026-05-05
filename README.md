@@ -1,4 +1,4 @@
-<img width="846" height="547" alt="image" src="https://github.com/user-attachments/assets/c0d6462d-8ab5-4250-b805-12d1d1d273f6" /># DSA210-TermProject
+# DSA210-TermProject
 
 # A Multivariate Analysis of My Music Consumption Patterns Based on My Menstrual Cycle, Academic Stress, and Emotional State
 
