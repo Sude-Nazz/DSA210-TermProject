@@ -140,6 +140,6 @@ plt.show()
 correlation, p_value_corr = stats.pearsonr(df['stress_level'], df['ms_played'])
 print(f"Pearson Correlation: {correlation:.4f}, P-value: {p_value_corr:.4f}")
 if p_val < 0.05:
-    print("Conclusion: The difference is statistically significant.")
+    print("Conclusion: The correlation is statistically significant.")
 else:
-    print("Conclusion: No significant difference is found.")
+    print("Conclusion: No significant correlation is found.")
