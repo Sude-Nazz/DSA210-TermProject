@@ -42,4 +42,5 @@ This is likely because there might be a relationship between my mood and the qua
 Hence, I will try to investigate that kind of relation.
 
 
-![my stress level vs. my number of tracks](2nd_ visualization.png)
+<img width="868" height="547" alt="2nd_ visualization" src="https://github.com/user-attachments/assets/60b35342-c7cd-4a66-88f6-1cf51c078810" />
+
