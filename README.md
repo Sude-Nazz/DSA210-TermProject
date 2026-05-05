@@ -73,11 +73,14 @@ To build a robust model, I selected three specific features as inputs:
 
 **C. Model Validation: 10-Fold Cross-Validation**
 To ensure the results were not due to a lucky random split of data, I utilized 10-Fold Cross-Validation.
+
 *-Process:* The dataset was partitioned into 10 subsets. The model was trained 10 times, each time using a different subset as the test set and the remaining 9 as the training set. (This method is the industry standard for ensuring that the model generalizes well to new, unseen data.)
 
 **D. Performance Results & Discussion**
 The model yielded highly consistent and successful results:
+
 *Average CV Accuracy (10-Fold):* 76.25%
+
 *Standard Deviation:* 0.0093
 
 <img width="1737" height="814" alt="decision_tree" src="https://github.com/user-attachments/assets/83f02a0b-0d7b-41e1-8f39-6b22873da963" />
