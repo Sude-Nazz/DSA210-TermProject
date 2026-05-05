@@ -214,3 +214,57 @@ if p_val < 0.05:
     print("Conclusion: My mood significantly affects the valence score of the songs I am listening.")
 else: 
     print("No significant relationship between the integrated moods and the valence scores!")
+
+
+# ---------------------------------------
+
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# 1. Feature Engineering: I am adding Temporal Context
+df['ts'] = pd.to_datetime(df['ts'])
+df['hour'] = df['ts'].dt.hour
+
+# 2. Defining Target and Features
+# Target: Integrated Mood State
+y = df['mood_state']
+
+# Features: Hour, Stress Level (Contextual Anchor), and Musical Valence
+features = ['hour', 'stress_level', 'valence']
+X = df[features]
+
+# 3. Model Initialization
+# max_depth=3 ensures the model is interpretable and avoids overfitting
+clf = DecisionTreeClassifier(max_depth=3, random_state=42)
+
+# 4. 10-Fold Cross-Validation
+# Instead of N times, I train it 10 times. It is much faster and very robust.
+cv_scores = cross_val_score(clf, X, y, cv=10)
+
+# 5. Final Model Training (for visualization and final testing)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+clf.fit(X_train, y_train)
+
+# --- Reporting Results ---
+print(f"--- Machine Learning: Mood Prediction via 10-Fold CV ---")
+print(f"Average CV Accuracy (10-Fold): {cv_scores.mean()*100:.2f}%")
+print(f"Standard Deviation of CV: {cv_scores.std():.4f}")
+
+# 6. VISUALIZATION: Decision Tree
+plt.figure(figsize=(22,10))
+plot_tree(clf, feature_names=features, class_names=clf.classes_, filled=True, rounded=True, fontsize=12)
+plt.title("Final Decision Tree: Predicting Integrated Mood (Validated via 10-Fold CV)", fontsize=16)
+plt.savefig('final_kfold_tree.png')
+plt.show()
+
+# 7. VISUALIZATION: Confusion Matrix
+y_pred = clf.predict(X_test)
+plt.figure(figsize=(10,7))
+cm = confusion_matrix(y_test, y_pred)
+sns.heatmap(cm, annot=True, fmt='d', xticklabels=clf.classes_, yticklabels=clf.classes_, cmap='YlGnBu')
+plt.title('Final Confusion Matrix: Model Performance Across Moods')
+plt.ylabel('Actual Mood State')
+plt.xlabel('Predicted Mood State')
+plt.savefig('final_kfold_confusion_matrix.png')
+plt.show()
