@@ -29,3 +29,12 @@ My initial exploratory analysis is focused on the relationship between **Academi
 
 **Why?**
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I am going to integrate **Spotify Audio Features (Energy, Valence)** to see if the *type* of music changes, even if the *duration* remains the same.
+
+
+## MILESTONE 2:
+I have applied second EDA and hypothesis test to figure out the relationship between my stress level and the number of tracks, by utilizing Pearson correlation.
+Therefore, we hav had a visualization showing my stress level vs. my number of tracks.
+We have obtained the **p-Value** as **0.1208** (>0.05). So, the correlation between my stress level and the number of tracks is not significant.
+**Why?**
+This is likely because there might be a relationship between my mood and the qualitative features of the songs (like Energy and Valence) but not the quantitative ones.
+Hence, I will try to investigate that kind of relation.
