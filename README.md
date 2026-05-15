@@ -205,7 +205,7 @@ Despite its high overall accuracy (76%), Gradient Boosting—and all other model
 •	**Temporal Patterns:** The models—as can be traced in the decision tree above—identified a clear distinction in my music habits before and after 10:30 AM, indicating a "routine-based" emotional signature in my listening history.
 
 
-# Limitations and Future Work:
+# Limitations & Future Work:
 
 •	**Class Imbalance:** A major limitation was the scarcity of “Crying” and “Period” logs compared to my “Stable” days. All models struggled to predict these minority classes.
 
