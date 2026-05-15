@@ -59,7 +59,7 @@ I have investigated whether *my stress levels* significantly change *my music co
 
 T-Statistic: -1.1117, P-Value: 0.2663
 
-*Conclusion:* No significant difference is found. I can't reject the null hypothesis (1). I do not know whether there is a crucial relationship between my average track duration and stress level.
+*Conclusion:* No significant difference is found (p>0.05). I can't reject the null hypothesis (1). I do not know whether there is a crucial relationship between my average track duration and stress level.
 
 BUT WHY❓
 
@@ -76,7 +76,7 @@ This is likely because my average track duration alone may not reflect my emotio
 
 Pearson Correlation: 0.0105, P-value: 0.1208
 
-*Conclusion:* No significant correlation is found. I can't reject the null hypothesis (2). I do not know whether there is a crucial relationship between my stress level and my track number.
+*Conclusion:* No significant correlation is found (p>0.05). I can't reject the null hypothesis (2). I do not know whether there is a crucial relationship between my stress level and my track number.
 
 BUT WHY❓
 
@@ -93,7 +93,7 @@ Since raw valence isn't available for all tracks, I assigned **Proxy Valence Sco
 
 ANOVA P-Value: 0.0142
 
-*Conclusion:* **My mood significantly affects the valence score of the songs I am listening.**
+*Conclusion:* **My mood significantly affects the valence score of the songs I am listening (p<0.05).**
 
 
 # 4. Machine Learning & Model Comparison
