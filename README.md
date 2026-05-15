@@ -227,7 +227,7 @@ This project has successfully demonstrated that my digital footprints—specific
 
 ## How to Run:
 1. Install dependencies: "pip install -r requirements.txt"
-2. Ensure all data files ("Streaming_History_Audio_*.json", "academic_stress.csv", "menstrual_data.csv", "crying_logs.csv") are in the root folder.
+2. Ensure all data files ("Streaming_History_Audio_*.json", "academic_stress.csv", "menstrual_data.csv", "crying_logs.csv") are in the root folder. ("menstrual_data.csv" and "crying_logs.csv" are in .gitignore as they are my private data.)
 3. Run the script: "my_dsa210_project.py"
 
 You can also examine my project through the notebook "MY_DSA210_PROJECT.ipynb".
