@@ -187,7 +187,7 @@ Despite its high overall accuracy (76%), Gradient Boosting—and all other model
 
 3. **Critical Evaluation**
 
-* **Decision Tree:** While highly interpretable, it is too "simple" and makes broad errors, such as mislabeling nearly all 'Stable' instances as 'Period Only' in certain branches.
+* **Decision Tree:** While highly interpretable, it is too simple and makes broad errors, such as mislabeling nearly all 'Stable' instances as 'Period Only' in certain branches.
 
 * **Random Forest:** Acts as a middle ground. It managed to catch **9 'Crying'** incidents (the only model to do so significantly), but its overall accuracy for 'Stable' and 'Stress' was lower than Gradient Boosting.
 
