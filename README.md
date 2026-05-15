@@ -85,7 +85,7 @@ This is likely because there might be a relationship between my mood and the qua
 
 # 3rd EDA & Hypothesis Test (Advanced Feature Engineering-ANOVA: **Proxy Valence** & **Mood States**)
 
-Since raw valence isn't available for all tracks, I assigned **Proxy Valence Scores** based on artist/genre types (e.g., Arabesk = 0.15, Energetic Pop = 1.0). I then created an **Integrated Mood State** which is the target variable for my ML models. Since I have more than two mood categories, ANOVA is the most robust method to compare all groups simultaneously without increasing the risk of statistical error; so, I have used ANOVA for my hypothesis test stage.
+Since raw valence isn't available for all tracks, I assigned **Proxy Valence Scores** based on artist/genre types (e.g., Arabesk = 0.15, Energetic Pop = 1.0) In order to be more realistic, I have added small randomizations to those scores (By the way, my initial target was to set up API connection on Colab and obtain valence scores from Spotify, but unfotunately Spoity did not allow me to do that since I don't have a Premium account.). I then created an **Integrated Mood State** which is the target variable for my ML models. Since I have more than two mood categories, ANOVA is the most robust method to compare all groups simultaneously without increasing the risk of statistical error; so, I have used ANOVA for my hypothesis test stage. (It should be noted that since I have included a randomization factor to determine the valence scores of the songs, the code will produce a different p-value each time it is run.)
 
 **Hypothesis (3):** *My integrated mood* significantly affects *the valence score of the songs* that I am listening to.
 
@@ -97,6 +97,8 @@ Since raw valence isn't available for all tracks, I assigned **Proxy Valence Sco
 
 
 # Machine Learning & Model Comparison
+
+In the final phase of my project, I developed Supervised Machine Learning models to determine if my emotional and physiological states can be predicted by combining behavioral music data with environmental and academic context.
 
 To address the feedback I've given regarding **biased truth labels**, I am comparing three models using the **Weighted F1-Score** instead of Accuracy.
 
@@ -218,79 +220,20 @@ o	*Future Extension:* Using the Spotify Web API (Spotipy) to obtain exact “Dan
 o	*Future Extension:* Integrating heart rate data from a wearable (like an Apple Watch) could provide an objective “Stress” feature, removing my probable human logging bias.
 
 
+# Conclusion
 
-
+This project has successfully demonstrated that my digital footprints—specifically my music choices—carry a hidden emotional signature. While predicting rare emotional events like crying remains a challenge for machine learning without more granular data, the ability to identify my high-stress academic periods with over 75% accuracy suggests that data-driven wellness monitoring is a viable and exciting field for future exploration.
 
 
 ## How to Run:
 1. Install dependencies: "pip install -r requirements.txt"
 2. Ensure all data files ("Streaming_History_Audio_*.json", "academic_stress.csv", "menstrual_data.csv", "crying_logs.csv") are in the root folder.
-3. Run the script: "python main.py"
+3. Run the script: "my_dsa210_project.py"
 
-## Deliverables:
-- "main.py": The core analysis script
-- "my_featurized_data.csv": The integrated dataset with all features
-- "stress_listening_eda.png": Visualization showing my stress level vs. my listening trend
+You can also examine my project through the notebook "MY_DSA210_PROJECT.ipynb".
 
 
+# Academic Integrity & AI Disclosure
 
+I declare that AI tools were utilized during the development of my project. I have limited my AI use to technical assistance, code optimization, and structural guidance for the final report.
 
-
-
-## 3RD EDA & HYPOTHESIS TEST
-This time, I have assigned valence scores to the songs I have listened, by utilizing the singers/genres. In addition, in order to be more realistic, I have added small randomizations to those scores (By the way, my initial target was to set up API connection on Colab and obtain valence scores from Spotify, but unfotunately Spoity did not allow me to do that since I don't have a Premium account.). Furthermore, I have deployed my integrated mood (by considering all aspects-academic stress, menstrual period, and crying) this time. I have defined **5 moods**: **Stable**, **Period Only**, **High Stress Only**, **Period + High Stress**, and **Crying**. Then, I have applied my 3rd EDA and hypothesis test to figure out the relationship between my integrated mood and the valence scores of the songs. Since I have more than two mood categories, ANOVA is the most robust method to compare all groups simultaneously without increasing the risk of statistical error; so, I have used ANOVA for my hypothesis test stage.
-And, as it can be seen in the example result below, **p-Value** for this hypothesis test has been **0.0312**! Therefore, for this test, I have concluded that **"My integrated mood significantly affects the valence score of the songs that I am listening to."** (But, it should be noted that since I have included a randomization factor to determine the valence scores of the songs, the code may sometimes give "No significant relationship!" result.)
-
-<img width="1001" height="547" alt="3rd_visualization" src="https://github.com/user-attachments/assets/c54b7e99-48a3-4f45-b5b5-850af430ccda" />
-
-
-## MACHINE LEARNING: PREDICTIVE MODELING OF  INTEGRATED MOOD STATES
-In the final phase of my project, I developed a Supervised Machine Learning model to determine if my emotional and physiological states can be predicted by combining behavioral music data with environmental and academic context.
-
-
-**A. Methodology & Algorithm Selection**
-
-I implemented a *Decision Tree Classifier* for this analysis.
-
-*Why have I used Decision Tree?* The Decision Tree allows me to visualize the specific logical paths (e.g., if stress is high AND music valence is low, THEN predict 'Crying') that lead to an emotional state, providing a "map" of my mood triggers.
-
-*Hyperparameter Tuning:* I restricted the model to a max_depth=3. This deliberate constraint prevents overfitting, ensuring the model captures general behavioral patterns rather than memorizing noise in the dataset.
-
-
-**B. Feature Engineering & Justification**
-
-To build a robust model, I selected three specific features as inputs:
-
-*1. My Academic Stress Level (Contextual Anchor):* This is the most critical feature. It provides the "environmental context." The same sad song might represent me "relaxation" during low stress but "emotional distress" during my high-stress periods.
-
-*2. Musical Valence:* This numerical value represents the emotional positivity of the tracks.
-
-*3. Hour of Day:* Captures my circadian rhythm and temporal habits.
-
-
-**C. Model Validation: 10-Fold Cross-Validation**
-
-To ensure the results were not due to a lucky random split of data, I utilized 10-Fold Cross-Validation.
-
-*-Process:* The dataset was partitioned into 10 subsets. The model was trained 10 times, each time using a different subset as the test set and the remaining 9 as the training set. (This method is the industry standard for ensuring that the model generalizes well to new, unseen data.)
-
-
-**D. Performance Results & Discussion**
-
-The model yielded highly consistent and successful results:
-
-*Average CV Accuracy (10-Fold):* 76.25%
-
-*Standard Deviation:* 0.0093
-
-<img width="1737" height="814" alt="decision_tree" src="https://github.com/user-attachments/assets/83f02a0b-0d7b-41e1-8f39-6b22873da963" />
-<img width="922" height="753" alt="confusion_matrix" src="https://github.com/user-attachments/assets/82a2e527-67f0-4b40-a1c9-99f9c36e2968" />
-
-
-**Interpretation of Results:**
-
-**High Stability:** The extremely low standard deviation (0.0093) proves that the model's performance is incredibly stable across different data segments. It confirms that the relationship between my stress, music, and mood is consistent and statistically significant.
-
-**Predictive Power:** A 76.25% accuracy rate indicates that my Integrated Mood State is not random. My Spotify footprint and my academic environment (Stress) create a "digital signature" that can be used to monitor and predict my emotional well-being.
-
-**Confusion Matrix Insights:** The model shows high precision in identifying Stable and High Stress states. However, it faces challenges with minority classes like Period Only and Crying. These are often misclassified into the majority categories. This result highlights that emotional extremes often share musical "signatures" with more common states, and further physiological features would be required to distinguish these nuanced moods with 100% precision.
