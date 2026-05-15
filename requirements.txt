@@ -1,4 +1,9 @@
 pandas
-matplotlib
+json
+glob
+os
+matplotlib.pyplot
 seaborn
+numpy
 scipy
+stats
