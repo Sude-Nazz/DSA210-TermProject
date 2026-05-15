@@ -5,5 +5,9 @@ os
 matplotlib.pyplot
 seaborn
 numpy
-scipy
-stats
+stats FROM scipy
+train_test_split FROM sklearn.model_selection
+DecisionTreeClassifier, plot_tree FROM sklearn.tree
+RandomForestClassifier, HistGradientBoostingClassifier FROM sklearn.ensemble
+classification_report, f1_score, confusion_matrix FROM sklearn.metrics
+confusion_matrix FROM sklearn.metrics
