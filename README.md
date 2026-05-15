@@ -64,6 +64,24 @@ BUT WHY❓
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I will survey the relationship between my stress level and my track number, by utilizing Pearson correlation.
 
 
+# 2nd EDA & Hypothesis Test (Pearson Correlation)
+
+**Metric (2):** Total Number of My Tracks.
+
+**Hypothesis (2):** My # of tracks significantly changes during my high-stress exam weeks (Stress >= 4).
+
+<img width="868" height="547" alt="Unknown-2" src="https://github.com/user-attachments/assets/6c64c726-e971-42da-bddc-bb5de3078e1c" />
+
+Pearson Correlation: 0.0105, P-value: 0.1208
+
+*Conclusion:* No significant correlation is found. I can't reject the null hypothesis (2). I do not know whether there is a crucial relationship between my stress level and my track number.
+
+BUT WHY❓
+
+This is likely because there might be a relationship between my mood and the qualitative features of the songs (like **Energy and Valence**) but not the quantitative ones. Hence, I will try to investigate that kind of relation in the third EDA & Hypothesis Testing.
+
+# 3rd EDA & Hypothesis Test (Advanced Feature Engineering-ANOVA: **Proxy Valence** & **Mood States**)
+
 
 
 ## How to Run:
@@ -77,11 +95,6 @@ This is likely because my average track duration alone may not reflect my emotio
 - "stress_listening_eda.png": Visualization showing my stress level vs. my listening trend
 
 
-
-![my stress level vs. my listening trend](stress_listening_eda.png)
-
-**Why?**
-This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I am going to integrate **Spotify Audio Features (Energy, Valence)** to see if the *type* of music changes, even if the *duration* remains the same.
 
 
 ## 2ND EDA & HYPOTHESIS TEST
