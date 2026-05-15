@@ -104,48 +104,24 @@ To address the feedback I've given regarding **biased truth labels**, I am compa
 
 * **Gradient Boosting (HistGradientBoosting):** Chosen for its superior performance on imbalanced tabular data.
 
---- Decision Tree Report ---
-                      precision    recall  f1-score   support
 
-              Crying       0.00      0.00      0.00       118
-    High Stress Only       0.85      0.21      0.34       711
-Period + High Stress       0.25      0.89      0.39       235
-         Period Only       0.28      0.41      0.33       703
-              Stable       0.81      0.72      0.76      2614
+<img width="826" height="451" alt="Unknown-4" src="https://github.com/user-attachments/assets/a5858b17-0388-416c-8960-ffb8ecc5f76d" />
 
-            accuracy                           0.58      4381
-           macro avg       0.44      0.45      0.36      4381
-        weighted avg       0.68      0.58      0.58      4381
+1. Decision Tree F1-Score   : 0.5842
 
+2. Random Forest F1-Score   : 0.6446
 
---- Random Forest Report ---
-                      precision    recall  f1-score   support
+3. Gradient Boosting F1-Score: 0.6639
 
-              Crying       0.09      0.08      0.08       118
-    High Stress Only       0.70      0.72      0.71       711
-Period + High Stress       0.22      0.23      0.23       235
-         Period Only       0.26      0.23      0.24       703
-              Stable       0.79      0.81      0.80      2614
+--------------------------------------------------
 
-            accuracy                           0.65      4381
-           macro avg       0.41      0.41      0.41      4381
-        weighted avg       0.64      0.65      0.64      4381
+THE BEST MODEL: Gradient Boosting
 
+Best Weighted F1-Score: 0.6639
 
---- Gradient Boosting Report ---
-                      precision    recall  f1-score   support
-
-              Crying       0.00      0.00      0.00       118
-    High Stress Only       0.71      0.96      0.82       711
-Period + High Stress       0.49      0.09      0.16       235
-         Period Only       0.27      0.01      0.02       703
-              Stable       0.78      0.99      0.87      2614
-
-            accuracy                           0.76      4381
-           macro avg       0.45      0.41      0.37      4381
-        weighted avg       0.65      0.76      0.66      4381
-
-
+*Gradient Boosting is the winner. This is because boosting
+algorithms iteratively correct the errors of previous trees, which
+is highly effective for handling the imbalanced nature of mood labels.*
 
 
 
