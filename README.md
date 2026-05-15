@@ -15,7 +15,9 @@ My project relies on a multi-source dataset (They cover March 2024 to March 2026
 •	**Academic Stress Logs:** It is a self-curated CSV file where I have recorded my daily stress levels on a scale of 1 to 5, specifically marking my exam periods as "High Stress" (4 or 5) etc.
 
 •	**Physiological & Emotional Logs** (converted to CSV files):
+
 o	*Menstrual Data:* Recorded dates of my cycle to analyze hormonal impact on my mood.
+
 o	*Crying Logs:* Specific timestamps of my emotional incidents.
 
 •	**Proxy Valence Data:** Since Spotify’s API valence was not directly available for all merged tracks, I engineered a "Proxy Valence" feature by mapping genres and artists (e.g., Arabesk, Rock, Pop) to energy scores (0.0 to 1.0) based on musical theory.
