@@ -91,7 +91,7 @@ Since raw valence isn't available for all tracks, I assigned **Proxy Valence Sco
 
 <img width="1001" height="547" alt="Unknown-3" src="https://github.com/user-attachments/assets/daa9d5a9-3ff9-480b-81b4-8fdcdb1b70dd" />
 
-ANOVA P-Value: 0.0142
+(Example) ANOVA P-Value: 0.0142
 
 *Conclusion:* **My mood significantly affects the valence score of the songs I am listening (p<0.05).**
 
