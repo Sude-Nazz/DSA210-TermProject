@@ -1,6 +1,6 @@
 # DSA210-TermProject
 
-# A Multivariate Analysis of My Music Consumption Patterns Based on My Menstrual Cycle, Academic Stress, and Emotional State (Predicting My Integrated Mood States through My Spotify Consumption and Academic Stress)
+# A Multivariate Analysis of *My Music Consumption Patterns* Based on *My Menstrual Cycle*, *Academic Stress*, and *Emotional State* (Predicting My Integrated Mood States through My Spotify Consumption and Academic Stress)
 
 ## MOTIVATION & PURPOSE:
 
