@@ -1,16 +1,23 @@
 # DSA210-TermProject
 
-# A Multivariate Analysis of My Music Consumption Patterns Based on My Menstrual Cycle, Academic Stress, and Emotional State
+# A Multivariate Analysis of My Music Consumption Patterns Based on My Menstrual Cycle, Academic Stress, and Emotional State (Predicting My Integrated Mood States through My Spotify Consumption and Academic Stress)
 
-## PURPOSE:
-I am investigating how my music consumption (via Spotify history) correlates with my academic stress, emotional state (crying logs), and biological cycles (menstrual data).
+## MOTIVATION & PURPOSE:
 
-## Things I have done in Milestone 1:
-- **Data Merging:** I have combined my Spotify JSON files (extended streaming history data) with custom CSV logs.
-- **Handling Missing Data:** Non-identified days in the academic calendar are defaulted to a stress level of 2.
-- **Integration:** I have utilized range-based matching for stress/period dates and specific date matching for crying incidents.
-- **EDA:** I have visualized the relationship between my stress level and my average track duration.
-- **Statistics:** I have performed a T-Test to see if my stress level significantly changes my listening behavior.
+I guessed that music would be a good mirror of my psyche. As a student, my life is governed by varying degrees of academic pressure, physiological cycles, and sudden emotional shifts. The motivation behind my project was to move beyond verbal evidence (e.g., "I listen to sad music when I'm stressed.") and utilize Data Science to quantify these patterns. By integrating my Spotify streaming history with personal logs, I aimed to discover whether my digital consumption could predict my mental and physical well-being, potentially creating a framework for "Mood-Aware" music recommendation systems.
+
+## Data Source:
+
+My project relies on a multi-source dataset (They cover March 2024 to March 2026, except for Crying Logs—covering January 2026 to March 2026.) integrated at the daily level:
+
+ •	Spotify Streaming History: I have collected via Spotify’s "Request Your Data" feature (GDPR). This provided JSON files containing every track played, timestamps, and duration (ms played).
+•	Academic Stress Logs: It is a self-curated CSV file where I have recorded my daily stress levels on a scale of 1 to 5, specifically marking my exam periods as "High Stress" (4 or 5) etc.
+•	Physiological & Emotional Logs (converted to CSV files): 
+o	Menstrual Data: Recorded dates of my cycle to analyze hormonal impact on my mood.
+o	Crying Logs: Specific timestamps of my emotional incidents.
+•	Proxy Valence Data: Since Spotify’s API valence was not directly available for all merged tracks, I engineered a "Proxy Valence" feature by mapping genres and artists (e.g., Arabesk, Rock, Pop) to energy scores (0.0 to 1.0) based on musical theory.
+
+
 
 ## How to Run:
 1. Install dependencies: "pip install -r requirements.txt"
