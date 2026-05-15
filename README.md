@@ -59,11 +59,12 @@ T-Statistic: -1.1117, P-Value: 0.2663
 
 *Conclusion:* No significant difference is found. I can't reject the null hypothesis (1). I do not know whether there is a crucial relationship between my average track duration and stress level.
 
-*The current results do not show a statistically significant difference in my **listening duration** based on my **stress level**.*
-
 BUT WHY❓
 
 This is likely because my average track duration alone may not reflect my emotional shifts. For the next step, I will survey the relationship between my stress level and my track number, by utilizing Pearson correlation.
+
+
+
 
 ## How to Run:
 1. Install dependencies: "pip install -r requirements.txt"
@@ -75,10 +76,7 @@ This is likely because my average track duration alone may not reflect my emotio
 - "my_featurized_data.csv": The integrated dataset with all features
 - "stress_listening_eda.png": Visualization showing my stress level vs. my listening trend
 
-### Initial Findings (Milestone 1):
-My initial exploratory analysis is focused on the relationship between **Academic Stress Levels** and **Average Track Duration**. 
-- **p-Value:** 0.2663
-- **Interpretation:** The current results do not show a statistically significant difference in listening duration based on my stress level.
+
 
 ![my stress level vs. my listening trend](stress_listening_eda.png)
 
