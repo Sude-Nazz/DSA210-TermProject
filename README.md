@@ -6,16 +6,53 @@
 
 I guessed that music would be a good mirror of my psyche. As a student, my life is governed by varying degrees of academic pressure, physiological cycles, and sudden emotional shifts. The motivation behind my project was to move beyond verbal evidence (e.g., "I listen to sad music when I'm stressed.") and utilize Data Science to quantify these patterns. By integrating my Spotify streaming history with personal logs, I aimed to discover whether my digital consumption could predict my mental and physical well-being, potentially creating a framework for "Mood-Aware" music recommendation systems.
 
-## Data Source:
+## DATA SOURCE:
 
-My project relies on a multi-source dataset (They cover March 2024 to March 2026, except for Crying Logs—covering January 2026 to March 2026.) integrated at the daily level:
+My project relies on a multi-source dataset (They cover March 2024 to March 2026, except for Crying Logs—covering January 2026 to March 2026.) **integrated at the daily level**:
 
- •	Spotify Streaming History: I have collected via Spotify’s "Request Your Data" feature (GDPR). This provided JSON files containing every track played, timestamps, and duration (ms played).
-•	Academic Stress Logs: It is a self-curated CSV file where I have recorded my daily stress levels on a scale of 1 to 5, specifically marking my exam periods as "High Stress" (4 or 5) etc.
-•	Physiological & Emotional Logs (converted to CSV files): 
-o	Menstrual Data: Recorded dates of my cycle to analyze hormonal impact on my mood.
-o	Crying Logs: Specific timestamps of my emotional incidents.
-•	Proxy Valence Data: Since Spotify’s API valence was not directly available for all merged tracks, I engineered a "Proxy Valence" feature by mapping genres and artists (e.g., Arabesk, Rock, Pop) to energy scores (0.0 to 1.0) based on musical theory.
+•	**Spotify Streaming History:** I have collected via Spotify’s "Request Your Data" feature (GDPR). This provided JSON files containing every track played, timestamps, and duration (ms played).
+
+•	**Academic Stress Logs:** It is a self-curated CSV file where I have recorded my daily stress levels on a scale of 1 to 5, specifically marking my exam periods as "High Stress" (4 or 5) etc.
+
+•	**Physiological & Emotional Logs** (converted to CSV files):
+o	*Menstrual Data:* Recorded dates of my cycle to analyze hormonal impact on my mood.
+o	*Crying Logs:* Specific timestamps of my emotional incidents.
+
+•	**Proxy Valence Data:** Since Spotify’s API valence was not directly available for all merged tracks, I engineered a "Proxy Valence" feature by mapping genres and artists (e.g., Arabesk, Rock, Pop) to energy scores (0.0 to 1.0) based on musical theory.
+
+# The list of the techniques I have used and different stages of my analysis:
+
+**1.	Data Integration:** I have merged multiple JSON sources and synchronized them with CSV logs using a "daily context" mapping function to create a master feature set.
+
+**2.	Exploratory Data Analysis (EDA):** I have utilized Seaborn and Matplotlib to visualize the relationships between my stress levels & listening durations, my stress levels & track numbers, and my integrated moods & the valence scores of the songs.
+
+**3.	Hypothesis Testing:**
+
+o	*T-Tests & Pearson Correlation:* These are used to check for quantitative relationships (Duration/# of Tracks vs. Stress).
+
+o	*ANOVA:* It’s employed to compare the means of valence scores across my five integrated mood categories (Stable, High Stress, Period, Period+Stress, Crying).
+
+**4.	Machine Learning:** I have implemented and compared three classification models to predict my "Mood State":
+
+o	*Decision Tree:* For logic visualization.
+
+o	*Random Forest:* For handling variance.
+
+o	*Gradient Boosting (HistGradientBoosting):* Optimized for imbalanced data.
+
+In this stage, I also made comments on the visualization of the decision tree and the confusion matrices of all machine learning models I have used.
+
+Furthermore, in order to decide on the best model for my project among them, I have deployed Weighted F1-Score. 
+
+
+
+# Exploratory Data Analysis (EDA) & Hypothesis Testing
+I have investigated whether *my stress levels* significantly change *my music consumption patterns.*
+
+# 1st EDA & Hypothesis Testing
+*   **Metric (1):** Average Minutes Played.
+*   **Hypothesis (1):** Track duration significantly changes during my high-stress exam weeks (Stress >= 4).
+
 
 
 
