@@ -78,9 +78,76 @@ Pearson Correlation: 0.0105, P-value: 0.1208
 
 BUT WHY❓
 
-This is likely because there might be a relationship between my mood and the qualitative features of the songs (like **Energy and Valence**) but not the quantitative ones. Hence, I will try to investigate that kind of relation in the third EDA & Hypothesis Testing.
+This is likely because there might be a relationship between my mood and the qualitative features of the songs (like **Energy and Valence**) but not the quantitative ones. Hence, I will try to investigate that kind of relation in the third EDA & Hypothesis Testing. 
+
 
 # 3rd EDA & Hypothesis Test (Advanced Feature Engineering-ANOVA: **Proxy Valence** & **Mood States**)
+
+Since raw valence isn't available for all tracks, I assigned **Proxy Valence Scores** based on artist/genre types (e.g., Arabesk = 0.15, Energetic Pop = 1.0). I then created an **Integrated Mood State** which is the target variable for my ML models. Since I have more than two mood categories, ANOVA is the most robust method to compare all groups simultaneously without increasing the risk of statistical error; so, I have used ANOVA for my hypothesis test stage.
+
+**Hypothesis (3):** *My integrated mood* significantly affects *the valence score of the songs* that I am listening to.
+
+<img width="1001" height="547" alt="Unknown-3" src="https://github.com/user-attachments/assets/daa9d5a9-3ff9-480b-81b4-8fdcdb1b70dd" />
+
+ANOVA P-Value: 0.0142
+
+*Conclusion:* **My mood significantly affects the valence score of the songs I am listening.**
+
+
+# 4. Machine Learning & Model Comparison
+
+To address the feedback I've given regarding **biased truth labels**, I am comparing three models using the **Weighted F1-Score** instead of Accuracy.
+
+* **Decision Tree:** Chosen for interpretability.
+
+* **Random Forest:** Chosen for its ability to handle variance.
+
+* **Gradient Boosting (HistGradientBoosting):** Chosen for its superior performance on imbalanced tabular data.
+
+--- Decision Tree Report ---
+                      precision    recall  f1-score   support
+
+              Crying       0.00      0.00      0.00       118
+    High Stress Only       0.85      0.21      0.34       711
+Period + High Stress       0.25      0.89      0.39       235
+         Period Only       0.28      0.41      0.33       703
+              Stable       0.81      0.72      0.76      2614
+
+            accuracy                           0.58      4381
+           macro avg       0.44      0.45      0.36      4381
+        weighted avg       0.68      0.58      0.58      4381
+
+
+--- Random Forest Report ---
+                      precision    recall  f1-score   support
+
+              Crying       0.09      0.08      0.08       118
+    High Stress Only       0.70      0.72      0.71       711
+Period + High Stress       0.22      0.23      0.23       235
+         Period Only       0.26      0.23      0.24       703
+              Stable       0.79      0.81      0.80      2614
+
+            accuracy                           0.65      4381
+           macro avg       0.41      0.41      0.41      4381
+        weighted avg       0.64      0.65      0.64      4381
+
+
+--- Gradient Boosting Report ---
+                      precision    recall  f1-score   support
+
+              Crying       0.00      0.00      0.00       118
+    High Stress Only       0.71      0.96      0.82       711
+Period + High Stress       0.49      0.09      0.16       235
+         Period Only       0.27      0.01      0.02       703
+              Stable       0.78      0.99      0.87      2614
+
+            accuracy                           0.76      4381
+           macro avg       0.45      0.41      0.37      4381
+        weighted avg       0.65      0.76      0.66      4381
+
+
+
+
 
 
 
@@ -97,16 +164,6 @@ This is likely because there might be a relationship between my mood and the qua
 
 
 
-## 2ND EDA & HYPOTHESIS TEST
-I have applied second EDA and hypothesis test to figure out the relationship between my stress level and the number of tracks, by utilizing Pearson correlation.
-Therefore, we hav had a visualization showing my stress level vs. my number of tracks.
-We have obtained the **p-Value** as **0.1208** (>0.05). So, the correlation between my stress level and the number of tracks is not significant.
-**Why?**
-This is likely because there might be a relationship between my mood and the qualitative features of the songs (like Energy and Valence) but not the quantitative ones.
-Hence, I will try to investigate that kind of relation.
-
-
-<img width="868" height="547" alt="2nd_ visualization" src="https://github.com/user-attachments/assets/60b35342-c7cd-4a66-88f6-1cf51c078810" />
 
 
 ## 3RD EDA & HYPOTHESIS TEST
