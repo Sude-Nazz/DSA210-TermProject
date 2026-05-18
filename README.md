@@ -235,11 +235,11 @@ Following the feedback from my assistant, I lastly want to survey the transforme
 
 # Binary Model Evaluation & Reflection
 
-As predicted by my assistant, consolidating the labels into a binary format (**Stable vs. Unstable**) dramatically improved the models' predictive power. (The winner model is **Gradient Boosting** again, but with the F1-Score equal to 0.8181 this time!)
+As predicted by my assistant, consolidating the labels into a binary format (**Stable vs. Unstable**) dramatically improved the models' predictive power. (The winner model is **Gradient Boosting** again, but with the **F1-Score** equal to **0.8181** this time!)
 
 * **Mitigating Label Bias:** By clustering minority classes into "Unstable", I reduced the mathematical penalty the model faced when missing rare events like 'Crying' or 'Period Only'.
 
-* **Improved F1-Scores:** The weighted F1-score underwent a noticeable increase (from 0.6744 to 0.8181 for Gradient Boosting). This confirms that while the exact nuance of my emotion (e.g., distinguishing crying from a high-stress exam day) is too subtle to be predicted by my music consumption features (valence, hour), predicting whether I am in a general state of "Equilibrium (Stable)" or "Disruption (Unstable)" is highly achievable.
+* **Improved F1-Scores:** The weighted F1-score underwent a noticeable increase (*from 0.6744 to 0.8181* for Gradient Boosting). This confirms that while the exact nuance of my emotion (e.g., distinguishing crying from a high-stress exam day) is too subtle to be predicted by my music consumption features (valence, hour), predicting whether I am in a general state of "Equilibrium (Stable)" or "Disruption (Unstable)" is highly achievable.
 
 * **Final Project Takeaway:** This optimization bridging multi-class and binary classification perfectly captures the iterative nature of data science, proving that strategic data re-framing can solve severe class imbalance.
 
