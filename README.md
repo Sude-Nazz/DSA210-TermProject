@@ -227,7 +227,7 @@ This project has successfully demonstrated that my digital footprints—specific
 
 # ONE ADDITIONAL (FINAL) ATTEMPT: Binary Classification Improvement (Based on My Assistant's Feedback)
 
-Following the feedback from my assistant, I lastly want to survey the transformed version of my multi-class problem into a Binary Classification task to be able to observe the performances of the models in such a classification. Since the dataset is heavily biased toward the "Stable" class, merging all other mood states ('Crying', 'High Stress Only', 'Period Only', 'Period + High Stress') into a single class named "Unstable" will balance the labels and potentially yield significantly higher F1-Scores.
+Following the feedback from my assistant, I wanted to add this part in my project to survey also the transformed version of my multi-class problem into a Binary Classification task to be able to observe the performances of the models in such a classification. Since the dataset is heavily biased toward the "Stable" class, merging all other mood states ('Crying', 'High Stress Only', 'Period Only', 'Period + High Stress') into a single class named "Unstable" will balance the labels and potentially yield significantly higher F1-Scores.
 
 *Here is the binary model comparison with weighted F1-Scores:*
 
