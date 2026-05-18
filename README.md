@@ -225,6 +225,26 @@ o	*Future Extension:* Integrating heart rate data from a wearable (like an Apple
 This project has successfully demonstrated that my digital footprints—specifically my music choices—carry a hidden emotional signature. While predicting rare emotional events like crying remains a challenge for machine learning without more granular data, the ability to identify my high-stress academic periods with over 75% accuracy suggests that data-driven wellness monitoring is a viable and exciting field for future exploration.
 
 
+# ONE ADDITIONAL (FINAL) ATTEMPT: Binary Classification Improvement (Based on My Assistant's Feedback)
+
+Following the feedback from my assistant, I lastly want to survey the transformed version of my multi-class problem into a Binary Classification task to be able to observe the performances of the models in such a classification. Since the dataset is heavily biased toward the "Stable" class, merging all other mood states ('Crying', 'High Stress Only', 'Period Only', 'Period + High Stress') into a single class named "Unstable" will balance the labels and potentially yield significantly higher F1-Scores.
+
+*Here is the binary model comparison with weighted F1-Scores:*
+
+<img width="846" height="451" alt="Unknown-7" src="https://github.com/user-attachments/assets/0ccbab20-add7-4d96-b537-815e2a655c1c" />
+
+# Binary Model Evaluation & Reflection
+
+As predicted by my assistant, consolidating the labels into a binary format (**Stable vs. Unstable**) dramatically improved the models' predictive power. (The winner model is **Gradient Boosting** again, but with the F1-Score equal to 0.8181 this time!)
+
+* **Mitigating Label Bias:** By clustering minority classes into "Unstable", I reduced the mathematical penalty the model faced when missing rare events like 'Crying' or 'Period Only'.
+
+* **Improved F1-Scores:** The weighted F1-score underwent a noticeable increase (from 0.6744 to 0.8181 for Gradient Boosting). This confirms that while the exact nuance of my emotion (e.g., distinguishing crying from a high-stress exam day) is too subtle to be predicted by my music consumption features (valence, hour), predicting whether I am in a general state of "Equilibrium (Stable)" or "Disruption (Unstable)" is highly achievable.
+
+* **Final Project Takeaway:** This optimization bridging multi-class and binary classification perfectly captures the iterative nature of data science, proving that strategic data re-framing can solve severe class imbalance.
+
+
+
 ## How to Run:
 1. Install dependencies: "pip install -r requirements.txt"
 2. Ensure all data files ("Streaming_History_Audio_*.json", "academic_stress.csv", "menstrual_data.csv", "crying_logs.csv") are in the root folder. ("menstrual_data.csv" and "crying_logs.csv" are in .gitignore as they are my private data.)
